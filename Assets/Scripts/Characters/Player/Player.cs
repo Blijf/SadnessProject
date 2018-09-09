@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Player : Character
 {
-	
 	//CONSTRUCTOR
-	public Player(){}
+	public Player(){
+	}
 
 	//MÉTODOS
 	public void doDamage()
 	{
 
-	}
-
-	public void movement()
-	{
-		
 	}
 
 }
