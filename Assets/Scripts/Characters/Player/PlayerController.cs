@@ -6,25 +6,30 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour 
 {
 	public float life,speed,damage;
+	private float moveHorizontal,moveVertical;
 	private Player player;
+	private Rigidbody2D rb;
 	
 	void Start () 
 	{
-		Character character= new Character(life, damage, speed);
-		player = (Player) character;//usamos polimorfismo
+		rb= GetComponent<Rigidbody2D>();
+		player= new Player(life, damage, speed,rb);
 	}
 	
 	void Update () 
 	{
-		//------------------MOVIMIENTO------------------------
-		//		 tanto del teclado como del yoystick
-		//----------------------------------------------------
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
-		
-		Vector2 movement= new Vector2(moveHorizontal,moveVertical);
 
-		this.transform.Translate(movement*speed*Time.deltaTime);
+		 moveHorizontal = Input.GetAxis("Horizontal");
+		 moveVertical = Input.GetAxis("Vertical");
+
 	}
 
+	void FixedUpdate() 
+	{
+		//------------------MOVIMIENTO------------------------
+		//		 Tanto del teclado como del yoystick
+		//----------------------------------------------------
+		player.move(moveHorizontal,moveVertical);
+
+ 	}
 }
