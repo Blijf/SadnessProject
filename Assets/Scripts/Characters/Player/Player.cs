@@ -41,13 +41,13 @@ public class Player : Character
 
 	}
 
-	public void dash(float dashClick)
+	public void dash(bool dashClick)
 	{
 		string dashState="";
 
 		//Dash
 		//Si se ha pulsado el dash
-		if(dashClick>0){ dashState= "ready";}
+		if(dashClick){ dashState= "ready";}
 
 		switch(dashState)
 		{

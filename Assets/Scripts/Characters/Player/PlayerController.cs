@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 	private float moveHorizontal,moveVertical;
 	private Player player;
 	private Rigidbody2D rb;
-	private float dashClick;
+	private bool dashClick;
 
 	void Start () 
 	{
@@ -30,10 +30,10 @@ public class PlayerController : MonoBehaviour
 	{
 		//------------------INPUTS------------------------
 		//movimiento
-		 moveHorizontal = Input.GetAxis("Horizontal");
-		 moveVertical = Input.GetAxis("Vertical");
+		 moveHorizontal = InputManager.MainHorizontal();
+		 moveVertical = InputManager.MainVertical();
 		//dash
-		dashClick=Input.GetAxis("Dash");//botón segundario del ratón
+		dashClick=InputManager.dashButton();//botón segundario del ratón
 	}
 
 	void FixedUpdate() 
