@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character 
+public abstract class Enemy : Character 
 {
 	//CONSTRUCTOR
 	public Enemy(){}

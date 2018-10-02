@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -10,9 +11,9 @@ public class Player : Character
 	//CONSTRUCTOR
 	public Player(){
 	}
-	public Player (float life, float damage, float speed,float dashDistance,float dashCooldown,Rigidbody2D rb)
+	public Player (int health, int damage, float speed,float dashDistance,float dashCooldown,Rigidbody2D rb)
 	{
-		this.life= life;
+		this.health= health;
 		this.damage= damage;
 		this.speed= speed;
 		this.rb =rb;
@@ -21,14 +22,26 @@ public class Player : Character
 		this.currentdashCooldown= dashCooldown;
 	}
 
-
-
-    //MÉTODOS
-    public void doDamage()
-	{
+	//-----------------------------------------------------------------------
+    //COMBATE
+	//-----------------------------------------------------------------------
+    public void doDamage(){
 
 	}
-
+	
+    public void takeDamage(int amount, Slider healthSlider)
+    {
+		health-=amount;
+		healthSlider.value= health;
+		if(health<=0)
+		{
+			health=0;
+			Debug.Log("Dead!");
+		}		
+    }
+	//-----------------------------------------------------------------------
+	//MOVIMIENTO
+	//-----------------------------------------------------------------------
 	public void move(float moveHorizontal, float moveVertical)
 	{
 			//Movimiento

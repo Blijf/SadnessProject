@@ -23,7 +23,6 @@ public static class InputManager
 	//BOTONES
 	public static bool dashButton()
 	{
-
 		return Input.GetButtonDown("Dash");
 	}
 

@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //clase la cual ejecutara todo los métodos del player
 public class PlayerController : MonoBehaviour 
 {
 	//VARIABLES
 	[Header("Caractrísticas del personaje")]
-	public float life;
-	public float damage;
+	public int health;
+	public int damage;
 	[Header("Movimiento")]
 	public float speed;
 	public float dashDistance;
 	public float dashCooldown;
-	
+	[Header("Otros")]
+	Slider healthSlider;
 	private float moveHorizontal,moveVertical;
 	private Player player;
 	private Rigidbody2D rb;
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
 	void Start () 
 	{
 		rb= GetComponent<Rigidbody2D>();
-		player= new Player(life, damage, speed,dashDistance,dashCooldown,rb);
+		player= new Player(health, damage, speed,dashDistance,dashCooldown,rb);
 
 	}
 	
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
 		 moveHorizontal = InputManager.MainHorizontal();
 		 moveVertical = InputManager.MainVertical();
 		//dash
-		dashClick=InputManager.dashButton();//botón segundario del ratón
+		dashClick=InputManager.dashButton();//botón segundario del ratón y A
 	}
 
 	void FixedUpdate() 
