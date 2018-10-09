@@ -18,13 +18,11 @@ public class PlayerController : MonoBehaviour
 	Slider healthSlider;
 	private float moveHorizontal,moveVertical;
 	private Player player;
-	private Rigidbody2D rb;
 	private bool dashClick;
 
 	void Start () 
 	{
-		rb= GetComponent<Rigidbody2D>();
-		player= new Player(health, damage, speed,dashDistance,dashCooldown,rb);
+		player= new Player();
 
 	}
 	
