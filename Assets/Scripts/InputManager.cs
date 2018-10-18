@@ -8,17 +8,11 @@ public static class InputManager
 	//MOVIMIENTO
 	public static float MainHorizontal()
 	{
-		float r = 0.0f;
-		r+= Input.GetAxis("Horizontal");//joystick
-
-		return Mathf.Clamp(r,-1.0f,1.0f); //valor medio entre dos valores
+		return Input.GetAxis ("Horizontal");
 	}
 	public static float MainVertical()
 	{
-		float r = 0.0f;
-		r+= Input.GetAxis("Vertical");//keyboard
-
-		return Mathf.Clamp(r,-1.0f,1.0f); //valor medio entre dos valores
+		return Input.GetAxis ("Vertical");
 	}
 	//BOTONES
 	public static bool dashButton()

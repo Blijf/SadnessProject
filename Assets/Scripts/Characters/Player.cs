@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Player
 {
 	private float dashDistance,dashCooldown, currentdashCooldown;
-	private Vector2 savedVelocity;
 	protected int damage {get; set;}
 	protected int health {get; set;}
 	protected float speed{get; set;}
@@ -41,14 +40,7 @@ public class Player
 			Debug.Log("Dead!");
 		}		
     }
-	//-----------------------------------------------------------------------
-	//MOVIMIENTO
-	//-----------------------------------------------------------------------
-	public void move(float moveHorizontal, float moveVertical)
-	{
 
-
-	}
 
 	public void dash(bool dashClick)
 	{
