@@ -6,7 +6,10 @@ using UnityEngine.UI;
 //clase la cual ejecutara todo los métodos del player
 public class PlayerController : MonoBehaviour 
 {
-	//VARIABLES
+	
+	//-------------------------------------------------
+	//					VARIABLES
+	//-------------------------------------------------
 	[Header("Caractrísticas del personaje")]
 	public int health;
 	public int damage;
@@ -17,13 +20,16 @@ public class PlayerController : MonoBehaviour
 	public float dashCooldown;
 	[Header("Otros")]
 	private float moveHorizontal,moveVertical;
-	private Player player;
 	private bool dashClick;
 	
 	private Rigidbody playerRigibody;
 	private Vector3 vectorMove;
 	private Animator anim;
 	private Quaternion quartenionRot;
+	
+	//-------------------------------------------------
+	//				MAIN METHODS
+	//-------------------------------------------------
 	void Start () 
 	{
 		playerRigibody= GetComponent<Rigidbody>();
@@ -32,7 +38,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Update () 
 	{
-		//------------------INPUTS------------------------
+		//INPUTS
 		//movimiento
 		 moveHorizontal = InputManager.MainHorizontal();
 		 moveVertical = InputManager.MainVertical();
@@ -43,20 +49,20 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate() 
 	{
-		//------------------MOVIMIENTO------------------------
-		//		 Tanto del teclado como del yoystick
-		//----------------------------------------------------
-		move();
-		//---------------------DASH------------------------
-		//		 Salto del personaje a una dirección
-		//----------------------------------------------------
+		//MOVIMIENTO
+		//Tanto del teclado como del yoystick
+			move();
+		//DASH
+		//Salto del personaje a una dirección
 
-		//---------------------ANIMACIONES------------------------
-		//----------------------------------------------------
+		//ANIMACIONES
 		animating();
 
  	}
 
+	//-------------------------------------------------
+	//						MÉTODOS
+	//-------------------------------------------------
 	private void move()
 	{
 		if(moveHorizontal!=0f || moveVertical!=0f)
