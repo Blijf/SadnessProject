@@ -5,7 +5,9 @@ using UnityEngine;
 //static de esta forma tenemos acceso rápido a los métodos en las otras clases
 public static class InputManager
 {
-	//MOVIMIENTO
+	//-------------------------------------------------
+	//					MOVIMIENTO
+	//-------------------------------------------------
 	public static float MainHorizontal()
 	{
 		return Input.GetAxis ("Horizontal");
@@ -14,7 +16,9 @@ public static class InputManager
 	{
 		return Input.GetAxis ("Vertical");
 	}
-	//BOTONES
+	//-------------------------------------------------
+	//					BOTONES
+	//-------------------------------------------------
 	public static bool dashButton()
 	{
 		return Input.GetButtonDown("Dash");

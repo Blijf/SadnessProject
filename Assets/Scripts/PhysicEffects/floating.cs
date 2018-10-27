@@ -5,7 +5,9 @@ using UnityEngine;
 namespace SweetAndSour.Effects{
 
 	public class floating : MonoBehaviour {
-		// User Inputs
+	//-------------------------------------------------
+	//					VARIABLES
+	//-------------------------------------------------
 		[Header("AMPLITUDE")]
 		public float frequency = 0.2f;
 		public float amplitude = 0.1f;
@@ -19,14 +21,17 @@ namespace SweetAndSour.Effects{
 		private Vector3 posOffset = new Vector3 ();
 		private Vector3 tempPos = new Vector3 ();
 	
-		// Use this for initialization
-		void Start () {
+		//-------------------------------------------------
+		//				MAIN METHODS
+		//-------------------------------------------------
+		void Start () 
+		{
 			// Store the starting position & rotation of the object
 			posOffset = transform.position;
 		}
 		
-		// Update is called once per frame
-		void Update () {
+		void Update () 
+		{
 			
 			//ROTATION
 			float rotationSpeed= Time.deltaTime * degreesPerSecond;
@@ -49,8 +54,11 @@ namespace SweetAndSour.Effects{
 	
 			transform.position = new Vector3(transform.position.x,tempPos.y,transform.position.z);
 		}
-
-		private bool isRigthRotation(){
+		//-------------------------------------------------
+		//					MÉTODOS
+		//-------------------------------------------------
+		private bool isRigthRotation()
+		{
 			float currentrot=transform.rotation.eulerAngles.x;
 			if(currentrot==maxRotate)
 			{

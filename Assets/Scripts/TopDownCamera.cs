@@ -10,7 +10,8 @@ namespace SweetAndSour.Camera
 		//-------------------------------------------------
 		//					VARIABLES
 		//-------------------------------------------------
-		public Transform target;//objeto a seguir
+		private Transform target;//objeto a seguir
+		public GameObject targetGameobject;
 		public float Height=15;//zoom de la cámara
 		public float distance=20; 
 		public float angle=30;
@@ -23,6 +24,8 @@ namespace SweetAndSour.Camera
 		// Use this for initialization
 		void Start () 
 		{
+			targetGameobject= GameObject.FindGameObjectWithTag ("Player");
+			target=targetGameobject.transform;
 			cameraRun();
 		}
 		
@@ -41,6 +44,7 @@ namespace SweetAndSour.Camera
 				return;
 			}
 
+			//distancia y altura determinan el vecto de posición global de la cámara
 			Vector3 worldPosition = (Vector3.forward*-distance)+(Vector3.up*Height);
 			// Debug.DrawLine(target.position, worldPosition, Color.red);
 
@@ -50,7 +54,7 @@ namespace SweetAndSour.Camera
 			//mover nuestra posición
 			Vector3 targetPosition= target.position;
 			targetPosition.y=0f;//solamente se mueve z y x
-			Vector3 finalPosition = targetPosition+rotatedVector;
+			Vector3 finalPosition = targetPosition+rotatedVector;//posición final de la cá
 			//Debug.DrawLine(target.position, finalPosition, Color.blue);
 
 			transform.position= Vector3.SmoothDamp(transform.position,finalPosition, ref refVelocity,speed);

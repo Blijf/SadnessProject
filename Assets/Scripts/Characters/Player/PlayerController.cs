@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
  	}
 
 	//-------------------------------------------------
-	//						MÉTODOS
+	//					METHODS
 	//-------------------------------------------------
 	private void move()
 	{
@@ -85,8 +85,8 @@ public class PlayerController : MonoBehaviour
 
 	private void animating()
 	{
-		bool walking=moveHorizontal!=0f || moveVertical!=0f;
-		anim.SetBool("isWalking",walking);
+		bool move=moveHorizontal!=0f || moveVertical!=0f;
+		anim.SetBool("isMove",move);
 	}
 
 }
