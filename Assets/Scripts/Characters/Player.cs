@@ -5,22 +5,11 @@ using UnityEngine.UI;
 
 public class Player
 {
-	private float dashDistance,dashCooldown, currentdashCooldown;
 	protected int damage {get; set;}
 	protected int health {get; set;}
-	protected float speed{get; set;}
 
 	//CONSTRUCTOR
 	public Player(){
-	}
-	public Player (int health, int damage, float speed,float dashDistance,float dashCooldown)
-	{
-		this.health= health;
-		this.damage= damage;
-		this.speed= speed;
-		this.dashDistance=dashDistance;
-		this.dashCooldown=dashCooldown;
-		this.currentdashCooldown= dashCooldown;
 	}
 
 	//-----------------------------------------------------------------------

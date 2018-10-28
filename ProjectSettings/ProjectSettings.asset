@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 00000000000000000000000000000000
+  productGUID: 304995351dd0e2d40a8623cbdc87d48d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -726,7 +726,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: d58811e7-fd2c-4e67-af68-61319f23cf41
-  projectName: EffectsExamples
+  projectName: SadnessProject (2)
   organizationId: sweet-sour
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

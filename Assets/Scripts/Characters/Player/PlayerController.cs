@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 	{
 		//MOVIMIENTO
 		//Tanto del teclado como del yoystick
-			move();
+		move();
 		//DASH
 		//Salto del personaje a una dirección
 
@@ -85,8 +85,12 @@ public class PlayerController : MonoBehaviour
 
 	private void animating()
 	{
+		//movimiento
 		bool move=moveHorizontal!=0f || moveVertical!=0f;
 		anim.SetBool("isMove",move);
+
+		//Ataque basico espada
+
 	}
 
 }

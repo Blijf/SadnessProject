@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieEnemy : MonoBehaviour {
+public class BasicEnemy : MonoBehaviour {
 	//-------------------------------------------------
 	//					VARIABLES
 	//-------------------------------------------------
@@ -12,7 +12,8 @@ public class ZombieEnemy : MonoBehaviour {
 	private NavMeshAgent nav;
 	private Animator anim;
 	[Header("Caractrísticas del Enemigo")]
-	public float distInfluencia=10f;
+	[Header("Seguimiento")]
+	public float maxDist = 10;
 	//-------------------------------------------------
 	//				MAIN METHODS
 	//-------------------------------------------------
@@ -26,7 +27,7 @@ public class ZombieEnemy : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		aproxMov();
 		// nav.SetDestination (targetTransform.position);
@@ -39,18 +40,18 @@ public class ZombieEnemy : MonoBehaviour {
 	//el enemigo sigue al personaje cuando se encuentra a una cierta distancia indicada en las variables de arriba.
     void aproxMov (){
     // aproximación por
-        float distanciaToPLayer = Vector3.Distance(targetTransform.position, transform.position);
+        float distanciaToPLayer = Vector3.Distance(transform.position,targetTransform.position);
         //Movimiento del player cuando este en su area de influencia
-        if(distanciaToPLayer < distInfluencia)
+        if(distanciaToPLayer <= maxDist)
         {
         //Le indica al enemigo en que posición se encunetra el player en cada momento
             nav.SetDestination (targetTransform.position);
             anim.SetBool("isMove",true);
-
         }
         else
         {
             anim.SetBool("isMove",false);
+			
         }
     }
 }

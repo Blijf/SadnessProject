@@ -9,6 +9,7 @@ public class lighFollow : MonoBehaviour {
 	//-------------------------------------------------
 	public GameObject targetGameobject; 
 	Transform targetTransform;
+	public float maxDist = 10;
 
 	//-------------------------------------------------
 	//					MAIN METHODS
@@ -24,7 +25,14 @@ public class lighFollow : MonoBehaviour {
 	//-------------------------------------------------
 	void follow()
 	{		
-		transform.LookAt(targetTransform.position);
+
+ 
+         if (Vector3.Distance(transform.position, targetTransform.position) <= maxDist)
+         {
+ 
+			transform.LookAt(targetTransform.position);
+ 
+         }
 	}
 
 
