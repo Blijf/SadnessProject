@@ -11,7 +11,7 @@ namespace SweetAndSour.Camera
 		//					VARIABLES
 		//-------------------------------------------------
 		private Transform target;//objeto a seguir
-		public GameObject targetGameobject;
+		private GameObject targetGameobject;
 		public float Height=15;//zoom de la cámara
 		public float distance=20; 
 		public float angle=30;

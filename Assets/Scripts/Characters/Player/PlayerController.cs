@@ -20,13 +20,12 @@ public class PlayerController : MonoBehaviour
 	public float dashCooldown;
 	[Header("Otros")]
 	private float moveHorizontal,moveVertical;
-	private bool dashClick;
+	private bool dashClick,attack1Click;
 	
-	private Rigidbody playerRigibody;
-	private Vector3 vectorMove;
-	private Animator anim;
-	private Quaternion quartenionRot;
-	
+	Rigidbody playerRigibody;
+	Vector3 vectorMove;
+	Animator anim;
+	Quaternion quartenionRot;
 	//-------------------------------------------------
 	//				MAIN METHODS
 	//-------------------------------------------------
@@ -44,7 +43,8 @@ public class PlayerController : MonoBehaviour
 		 moveVertical = InputManager.MainVertical();
 		//dash
 		dashClick=InputManager.dashButton();//botón segundario del ratón y A
-
+		//ataque 1
+		attack1Click=InputManager.attack1Button();
 	}
 
 	void FixedUpdate() 
@@ -89,8 +89,9 @@ public class PlayerController : MonoBehaviour
 		bool move=moveHorizontal!=0f || moveVertical!=0f;
 		anim.SetBool("isMove",move);
 
+		bool attack= attack1Click;
 		//Ataque basico espada
-
+		anim.SetBool("isAttack", attack);
 	}
 
 }

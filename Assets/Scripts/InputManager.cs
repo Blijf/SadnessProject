@@ -23,5 +23,9 @@ public static class InputManager
 	{
 		return Input.GetButtonDown("Dash");
 	}
+	public static bool attack1Button()
+	{
+		return Input.GetButtonDown("Attack1");
+	}
 
 }
