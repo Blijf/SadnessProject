@@ -950,6 +950,7 @@ GameObject:
   - component: {fileID: 136703597447562492}
   - component: {fileID: 195808022202972752}
   - component: {fileID: 114657964383034550}
+  - component: {fileID: 114221096862048756}
   m_Layer: 0
   m_Name: SwordAndShieldWarrior
   m_TagString: Player
@@ -2348,6 +2349,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114221096862048756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885268382736258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a5feaf597538342a14a025add801c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
 --- !u!114 &114657964383034550
 MonoBehaviour:
   m_ObjectHideFlags: 1

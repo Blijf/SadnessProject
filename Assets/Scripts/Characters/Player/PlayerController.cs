@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Otros")]
 	private float moveHorizontal,moveVertical;
 	private bool dashClick,attack1Click;
-	
+	//__________________________________________________
 	Rigidbody playerRigibody;
 	Vector3 vectorMove;
 	Animator anim;

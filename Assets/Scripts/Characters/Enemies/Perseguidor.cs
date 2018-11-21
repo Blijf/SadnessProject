@@ -12,12 +12,12 @@ public class Perseguidor : MonoBehaviour {
 	[Header("Seguimiento")]
 	public float maxDist = 10;
 	[Header("Ataque")]
-	public int damage;
 	public float cooldown;
 	public float distToAttack=1;
 	//__________________________________________________
-	GameObject targetGameobject;
-	Transform targetTransform;
+	GameObject playerGameObject;
+	Transform playerTransform;
+	PlayerHealth playerHealth;
 	NavMeshAgent nav;
 	Animator anim;
 	float distanciaToPLayer;
@@ -28,20 +28,33 @@ public class Perseguidor : MonoBehaviour {
 	//-------------------------------------------------
 	void Start () 
 	{
-		targetGameobject= GameObject.FindGameObjectWithTag ("Player");
-		targetTransform= targetGameobject.transform;
+		playerGameObject= GameObject.FindGameObjectWithTag ("Player");
+		playerTransform= playerGameObject.transform;
 		nav=GetComponent<NavMeshAgent>();
 		anim=GetComponent<Animator>();
+		playerHealth = playerGameObject.GetComponent <PlayerHealth> ();
+
 
 	}
 	
 	void Update () 
 	{
-		distanciaPlayer();
-		aproxMov();
+		//Esta vivo el Player?
+		if(playerHealth.currentHealth<=0)
+		{
+			GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false;//el enemigo ya no se moverá.
+        	// GetComponent <Rigidbody> ().isKinematic = true;// deja de ser influenciado por la físicas del mundo 3D.
+		}
+		else
+		{
+			//MOVIMIENTO
+			distanciaPlayer();
+			aproxMov();
 
-		distToattackPlayer();
-		whenAttack();
+			//ATAQUE
+			distToattackPlayer();
+			whenAttack();
+		}
 	}
 	
 	//-------------------------------------------------
@@ -55,8 +68,8 @@ public class Perseguidor : MonoBehaviour {
         //Movimiento del player cuando este en su area de influencia
         if(distanciaToPLayer <= maxDist)
         {
-        //Le indica al enemigo en que posición se encunetra el player en cada momento
-            nav.SetDestination (targetTransform.position);
+        //Indica al enemigo en que posición se encunetra el player en cada momento
+            nav.SetDestination (playerTransform.position);
             anim.SetBool("isMove",true);
         }
         else
@@ -67,10 +80,10 @@ public class Perseguidor : MonoBehaviour {
          }
     }
 	
-	//calcula la distancia de del player al enemigo.
+	//calcula la distancia del player al enemigo.
 	void distanciaPlayer()
 	{
-        distanciaToPLayer = Vector3.Distance(transform.position,targetTransform.position);
+        distanciaToPLayer = Vector3.Distance(transform.position,playerTransform.position);
 	}
 
 	//-------------------------------------------------
@@ -92,6 +105,7 @@ public class Perseguidor : MonoBehaviour {
 	{
 		timer=0f;
 		anim.SetBool("isAttack", true);
+
 	}
 
 
@@ -107,7 +121,10 @@ public class Perseguidor : MonoBehaviour {
 		{
 			anim.SetBool("isAttack", false);
 		}
+
+
 	}
+
 
 }
 
