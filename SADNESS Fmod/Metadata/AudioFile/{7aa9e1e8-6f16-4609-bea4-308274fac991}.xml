@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7aa9e1e8-6f16-4609-bea4-308274fac991}">
+        <property name="assetPath">
+            <value>404014__haramir__death.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.1000000000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{24cd36d2-7f86-4393-9a56-25db972e8c58}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{db7d11e2-b6f7-4325-a6f1-13c203e20ce7}">
+        <property name="assetPath">
+            <value>Small Rock And Stone Hits 2 SOUND Effect 3.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{24cd36d2-7f86-4393-9a56-25db972e8c58}</destination>
+        </relationship>
+    </object>
+</objects>

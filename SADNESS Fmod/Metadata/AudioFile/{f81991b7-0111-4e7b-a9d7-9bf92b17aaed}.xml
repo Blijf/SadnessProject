@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{f81991b7-0111-4e7b-a9d7-9bf92b17aaed}">
+        <property name="assetPath">
+            <value>voice_female_a_attack_02.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.62</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{24cd36d2-7f86-4393-9a56-25db972e8c58}</destination>
+        </relationship>
+    </object>
+</objects>

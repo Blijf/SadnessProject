@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{66a3463a-788c-4fc4-8f4d-8e6a6d1638c0}">
+        <property name="assetPath">
+            <value>37851_SFX_Samurai Sword Woosh 4.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.93866666666666665</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{24cd36d2-7f86-4393-9a56-25db972e8c58}</destination>
+        </relationship>
+    </object>
+</objects>

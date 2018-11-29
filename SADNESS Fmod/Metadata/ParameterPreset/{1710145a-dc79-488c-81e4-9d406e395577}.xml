@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{1710145a-dc79-488c-81e4-9d406e395577}">
+        <property name="name">
+            <value>Golpe_Metal_Piedra_o_fallo</value>
+        </property>
+        <relationship name="folder">
+            <destination>{a2aba6db-bcf2-4075-b649-ebac0a72fe6f}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{a3a8b703-22cf-4a45-bfd7-0a9ff44e9fc9}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{a3a8b703-22cf-4a45-bfd7-0a9ff44e9fc9}">
+        <property name="minimum">
+            <value>1</value>
+        </property>
+        <property name="maximum">
+            <value>4</value>
+        </property>
+        <property name="initialValue">
+            <value>1</value>
+        </property>
+        <property name="isExposedRecursively">
+            <value>false</value>
+        </property>
+    </object>
+</objects>

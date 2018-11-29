@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{3404156f-09b2-4d3f-bf35-dd75b26ba2d9}">
+        <property name="assetPath">
+            <value>voice_male_b_battle_shout_short_09.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.90000000000000002</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{24cd36d2-7f86-4393-9a56-25db972e8c58}</destination>
+        </relationship>
+    </object>
+</objects>

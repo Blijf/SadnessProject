@@ -22,10 +22,18 @@ public class PlayerController : MonoBehaviour
 	private float moveHorizontal,moveVertical;
 	private bool dashClick,attack1Click;
 	//__________________________________________________
+	//Varianles internas
 	Rigidbody playerRigibody;
 	Vector3 vectorMove;
 	Animator anim;
+	bool playerIsMoving;
 	Quaternion quartenionRot;
+	//__________________________________________________
+	//Fmod
+	[FMODUnity.EventRef]
+	public string stepsSound;
+
+
 	//-------------------------------------------------
 	//				MAIN METHODS
 	//-------------------------------------------------
@@ -33,6 +41,8 @@ public class PlayerController : MonoBehaviour
 	{
 		playerRigibody= GetComponent<Rigidbody>();
 		anim=GetComponent<Animator>();
+
+		InvokeRepeating("callFootStepsSound",0,speed);
 	}
 	
 	void Update () 
@@ -45,6 +55,7 @@ public class PlayerController : MonoBehaviour
 		dashClick=InputManager.dashButton();//botón segundario del ratón y A
 		//ataque 1
 		attack1Click=InputManager.attack1Button();
+		
 	}
 
 	void FixedUpdate() 
@@ -65,6 +76,7 @@ public class PlayerController : MonoBehaviour
 	//-------------------------------------------------
 	private void move()
 	{
+		//Se mueve
 		if(moveHorizontal!=0f || moveVertical!=0f)
 		{
 			vectorMove.Set(moveHorizontal,0f,moveVertical);//la y es 0 ya que no se movera verticalmente
@@ -75,23 +87,28 @@ public class PlayerController : MonoBehaviour
 			quartenionRot= Quaternion.LookRotation(vectorMove);
 			playerRigibody.MoveRotation(quartenionRot);
 
+			playerIsMoving=true;
+			//reproducimos el sonido de pasos cada vez que el personaje esta en movimiento.
+			FMODUnity.RuntimeManager.PlayOneShot(stepsSound);
+
 		}
 		else
 		{
+			playerIsMoving=false;
 			transform.rotation= quartenionRot;
 		}
 		
 	}
 
-	private void animating()
+	void animating()
 	{
 		//movimiento
-		bool move=moveHorizontal!=0f || moveVertical!=0f;
-		anim.SetBool("isMove",move);
+		anim.SetBool("isMove",playerIsMoving);
 
 		bool attack= attack1Click;
 		//Ataque basico espada
 		anim.SetBool("isAttack", attack);
 	}
 
+	
 }
